@@ -1,0 +1,36 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.env/
+
+# Configuration files
+*.env
+*.ini
+*.yaml
+
+# Logs
+*.log
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Package files
+*.egg-info/
+build/
+dist/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Local data
+alerts.json

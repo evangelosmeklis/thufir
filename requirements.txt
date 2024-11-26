@@ -1,0 +1,11 @@
+# CLI framework
+click
+
+# AWS CloudWatch integration
+boto3
+
+# Kubernetes integration
+kubernetes
+
+# Prometheus integration
+requests  # Used for HTTP requests to Prometheus API

@@ -1,15 +1,16 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="project_name",
+    name="thufir",
     version="0.1.0",
     packages=find_packages(),
     install_requires=[
-        # Add dependencies here
+        "click",
+        "requests",
     ],
     entry_points={
         "console_scripts": [
-            "thufir-cli=thufir.__main__:main",
+            "thufir=thufir.cli:cli",
         ],
     },
     author="Evangelos Meklis",
