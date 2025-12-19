@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "thufir",
-      "source": ".",
+      "source": "./",
       "description": "Root cause analysis plugin integrating Prometheus, GitHub, and GitLab for production incident investigation",
       "version": "1.0.0",
       "author": {
