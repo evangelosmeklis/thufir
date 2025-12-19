@@ -9,7 +9,5 @@
   "homepage": "https://github.com/evangelosmeklis/thufir",
   "repository": "https://github.com/evangelosmeklis/thufir",
   "license": "MIT",
-  "keywords": ["rca", "root-cause-analysis", "prometheus", "github", "gitlab", "incident-response", "debugging", "sre", "devops", "monitoring"],
-  "category": "DevOps",
-  "tags": ["incident-management", "monitoring", "alerting", "production-debugging", "metrics-analysis"]
+  "keywords": ["rca", "root-cause-analysis", "prometheus", "github", "gitlab", "incident-response", "debugging", "sre", "devops", "monitoring"]
 }
