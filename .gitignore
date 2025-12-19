@@ -1,0 +1,23 @@
+# Local plugin settings (contains sensitive tokens)
+.claude/*.local.md
+
+# RCA reports (may contain sensitive production data)
+rca-reports/
+
+# Node modules (if MCP servers use Node)
+node_modules/
+
+# Python virtual environments (if MCP servers use Python)
+venv/
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
