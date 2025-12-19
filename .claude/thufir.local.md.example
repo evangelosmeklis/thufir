@@ -1,0 +1,153 @@
+---
+prometheus:
+  endpoint: "https://prometheus.example.com"
+  bearer_token: ""  # Optional: leave empty if no auth required
+
+github:
+  token: ""  # Required: GitHub personal access token (ghp_...)
+  default_repo: "owner/repository"  # e.g., "anthropics/anthropic-sdk-python"
+  issue_labels: ["production", "incident", "p0"]  # Optional: filter issues by labels
+
+gitlab:
+  token: ""  # Required: GitLab personal access token (glpat_...)
+  default_project: "group/project"  # e.g., "gitlab-org/gitlab"
+  issue_labels: ["production", "incident"]  # Optional: filter issues by labels
+
+analysis:
+  commit_search_days: 30  # How far back to search git history
+  max_files_to_analyze: 50  # Maximum number of files to analyze in detail
+  auto_save_reports: true  # Automatically save RCA reports to files
+  reports_directory: "rca-reports"  # Where to save RCA reports
+---
+
+# Thufir Configuration
+
+This file configures the Thufir root cause analysis plugin.
+
+## Prometheus Setup
+
+Set your Prometheus endpoint URL. If your Prometheus instance requires authentication, provide a bearer token.
+
+```yaml
+prometheus:
+  endpoint: "https://prometheus.mycompany.com"
+  bearer_token: "my-secret-token"
+```
+
+**Installation:**
+```bash
+cd mcp-servers/prometheus
+pip install -r requirements.txt
+```
+
+**Testing:**
+```bash
+export PROMETHEUS_URL="https://prometheus.example.com"
+export PROMETHEUS_TOKEN="optional-token"
+python server.py
+```
+
+## GitHub Setup
+
+Create a personal access token with `repo` scope:
+https://github.com/settings/tokens
+
+```yaml
+github:
+  token: "ghp_1234567890abcdefghijklmnopqrstuvwxyz123"
+  default_repo: "myorg/myrepo"
+  issue_labels: ["production", "incident"]
+```
+
+GitHub uses the official MCP server: `@modelcontextprotocol/server-github`
+
+**Installation:**
+```bash
+npm install -g @modelcontextprotocol/server-github
+```
+
+**Environment:**
+```bash
+export GITHUB_TOKEN="ghp_your_token"
+```
+
+## GitLab Setup
+
+Create a personal access token with `api` scope:
+https://gitlab.com/-/profile/personal_access_tokens
+
+```yaml
+gitlab:
+  token: "glpat-1234567890ABCDEFGHIJK"
+  default_project: "mygroup/myproject"
+  issue_labels: ["production", "incident"]
+```
+
+**Installation:**
+```bash
+cd mcp-servers/gitlab
+pip install -r requirements.txt
+```
+
+**Testing:**
+```bash
+export GITLAB_URL="https://gitlab.com"
+export GITLAB_TOKEN="glpat-your-token"
+export GITLAB_PROJECT_ID="12345"  # or "group/project"
+python server.py
+```
+
+## Analysis Preferences
+
+Customize how Thufir performs root cause analysis:
+
+```yaml
+analysis:
+  commit_search_days: 30  # Search commits from last 30 days
+  max_files_to_analyze: 50  # Limit deep analysis to 50 files
+  auto_save_reports: true  # Always save RCA reports
+  reports_directory: "rca-reports"  # Save reports here
+```
+
+## Usage
+
+After configuration, Thufir commands will automatically use these settings:
+
+```bash
+# Analyze Prometheus alert (uses prometheus.endpoint from settings)
+/thufir:analyze-prometheus HighErrorRate
+
+# Analyze GitHub issue (uses github.default_repo from settings)
+/thufir:analyze-github 456
+
+# Analyze GitLab issue (uses gitlab.default_project from settings)
+/thufir:analyze-gitlab 789
+
+# Interactive investigation
+/thufir:investigate
+```
+
+## Troubleshooting
+
+**MCP servers not starting:**
+- Check that dependencies are installed (`pip install -r requirements.txt`)
+- Verify environment variables are set correctly
+- Check Claude Code logs for MCP server errors
+
+**Authentication errors:**
+- Verify tokens have correct permissions
+- Check token expiration dates
+- Ensure endpoints are accessible from your network
+
+**No data returned:**
+- Verify Prometheus/GitHub/GitLab URLs are correct
+- Check that default_repo/default_project exist and you have access
+- Test API endpoints manually with curl
+
+## Security Notes
+
+- **Never commit this file to git** - it contains sensitive tokens
+- Add `.claude/*.local.md` to `.gitignore`
+- Use environment variables for CI/CD instead of this file
+- Rotate tokens regularly
+- Use read-only tokens when possible
