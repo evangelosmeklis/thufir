@@ -1,20 +1,17 @@
 {
-  "name": "thufir-marketplace",
-  "metadata": {
-    "description": "Root cause analysis plugin for production incident investigation",
-    "version": "1.0.0"
-  },
+  "name": "thufir",
   "owner": {
     "name": "Evangelos Meklis",
     "email": "vmeklis@hotmail.com"
   },
+  "metadata": {
+    "description": "Root cause analysis plugin integrating Prometheus, GitHub, and GitLab for production incident investigation",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "thufir",
-      "source": {
-        "type": "github",
-        "repo": "evangelosmeklis/thufir"
-      },
+      "source": ".",
       "description": "Root cause analysis plugin integrating Prometheus, GitHub, and GitLab for production incident investigation",
       "version": "1.0.0",
       "author": {
@@ -24,31 +21,10 @@
       "homepage": "https://github.com/evangelosmeklis/thufir",
       "repository": "https://github.com/evangelosmeklis/thufir",
       "license": "MIT",
+      "keywords": ["rca", "root-cause-analysis", "prometheus", "github", "gitlab", "incident-response", "debugging", "sre", "devops", "monitoring"],
       "category": "DevOps",
-      "tags": [
-        "incident-management",
-        "root-cause-analysis",
-        "monitoring",
-        "alerting",
-        "production-debugging",
-        "sre",
-        "devops",
-        "prometheus",
-        "github",
-        "gitlab"
-      ],
-      "keywords": [
-        "rca",
-        "root-cause-analysis",
-        "prometheus",
-        "github",
-        "gitlab",
-        "incident-response",
-        "debugging",
-        "sre",
-        "devops",
-        "monitoring"
-      ]
+      "tags": ["incident-management", "monitoring", "alerting", "production-debugging", "metrics-analysis"],
+      "strict": false
     }
   ]
 }
