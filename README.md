@@ -9,9 +9,6 @@ Autonomous root cause analysis for production incidents. Integrates with Prometh
 ```bash
 # Add the marketplace
 /plugin marketplace add evangelosmeklis/thufir
-
-# Install the plugin
-/plugin install thufir
 ```
 
 ### From GitHub
