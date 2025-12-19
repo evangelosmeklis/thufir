@@ -16,7 +16,6 @@
         "repo": "evangelosmeklis/thufir"
       },
       "description": "Root cause analysis plugin integrating Prometheus, GitHub, and GitLab for production incident investigation",
-      "longDescription": "Thufir is a comprehensive root cause analysis plugin that transforms production incidents into actionable insights. It autonomously investigates alerts from Prometheus, issues from GitHub/GitLab, analyzes metrics, searches code, traces git history, and generates detailed RCA reports following industry best practices.",
       "version": "1.0.0",
       "author": {
         "name": "Evangelos Meklis",
