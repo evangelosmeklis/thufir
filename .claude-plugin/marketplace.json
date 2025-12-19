@@ -1,0 +1,65 @@
+{
+  "name": "thufir",
+  "displayName": "Thufir - AI-Powered Root Cause Analysis",
+  "version": "1.0.0",
+  "description": "Autonomous root cause analysis for production incidents. Integrates with Prometheus, GitHub, and GitLab to investigate alerts, analyze metrics, search code, trace git history, and generate comprehensive RCA reports.",
+  "category": "DevOps",
+  "tags": [
+    "incident-management",
+    "root-cause-analysis",
+    "monitoring",
+    "alerting",
+    "production-debugging",
+    "sre",
+    "devops",
+    "prometheus",
+    "github",
+    "gitlab"
+  ],
+  "features": [
+    "Autonomous investigation of Prometheus alerts, GitHub issues, and GitLab issues",
+    "Automatic metric correlation with 100+ PromQL query patterns",
+    "Codebase search with error string matching",
+    "Git history analysis with blame, log, and bisect",
+    "Timeline reconstruction correlating code changes with incidents",
+    "Five Whys methodology for systematic root cause identification",
+    "Professional RCA report generation in markdown format",
+    "4 comprehensive skills with investigation workflows",
+    "3 MCP server integrations for external data sources"
+  ],
+  "useCases": [
+    "SRE incident response and post-mortem documentation",
+    "DevOps deployment troubleshooting",
+    "Production debugging for development teams",
+    "Systematic investigation of service outages",
+    "Performance degradation analysis",
+    "Configuration error tracking"
+  ],
+  "author": {
+    "name": "Evangelos Meklis",
+    "email": "vmeklis@hotmail.com"
+  },
+  "homepage": "https://github.com/evangelosmeklis/thufir",
+  "repository": "https://github.com/evangelosmeklis/thufir",
+  "documentation": "https://github.com/evangelosmeklis/thufir#readme",
+  "license": "MIT",
+  "screenshots": [],
+  "requirements": {
+    "prometheus": {
+      "optional": true,
+      "description": "Prometheus server endpoint for metrics analysis"
+    },
+    "github": {
+      "optional": true,
+      "description": "GitHub personal access token for issue and repository access"
+    },
+    "gitlab": {
+      "optional": true,
+      "description": "GitLab personal access token for issue and project access"
+    }
+  },
+  "installation": {
+    "type": "git",
+    "url": "https://github.com/evangelosmeklis/thufir.git"
+  }
+}
