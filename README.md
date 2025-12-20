@@ -80,4 +80,4 @@ Revert pool size change or increase based on load testing
 
 ---
 
-**Made with [Claude Code](https://claude.com/claude-code)**
+**Made with [Claude Code](https://claude.com/claude-code)** with ❤️ in Athens, Greece 
