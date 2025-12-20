@@ -2,6 +2,8 @@
 
 Autonomous root cause analysis for production incidents. Integrates with Prometheus, GitHub, and GitLab to investigate alerts, analyze metrics, search code, and generate comprehensive RCA reports.
 
+![Thufir in action](media/Screenshot%202025-12-20%20at%2012.03.32.png)
+
 ## Quick Install
 
 ### From Marketplace (Recommended)
@@ -45,50 +47,11 @@ gitlab:
 
 ### 2. Use It
 
-**Investigate an alert:**
+** Just write this in claude code**
 ```bash
-/rca:analyze-prometheus HighErrorRate
+/thufir
 ```
-
-**Analyze a GitHub issue:**
-```bash
-/rca:analyze-github 456
-```
-
-**Analyze a GitLab issue:**
-```bash
-/rca:analyze-gitlab 789
-```
-
-**Interactive wizard:**
-```bash
-/rca:investigate
-```
-
-**Or just mention the problem:**
-```
-"We're seeing 500 errors in production"
-```
-→ The RCA agent automatically investigates and generates a report
-
-## What It Does
-
-1. **Fetches** alert/issue details from Prometheus/GitHub/GitLab
-2. **Queries** metrics to understand patterns
-3. **Searches** your codebase for related code
-4. **Analyzes** git history to find recent changes
-5. **Correlates** timeline of commits with incident
-6. **Identifies** root cause using Five Whys methodology
-7. **Generates** professional RCA report in markdown
-
-## Features
-
-- ✅ **Autonomous investigation** - AI agent handles end-to-end RCA
-- ✅ **Multi-source integration** - Prometheus, GitHub, GitLab
-- ✅ **Metric analysis** - 100+ PromQL query patterns included
-- ✅ **Code forensics** - Grep, blame, bisect workflows
-- ✅ **Evidence-based** - Correlates metrics + code + git history
-- ✅ **Professional reports** - Timeline, evidence, recommendations
+and a drop down will appear 
 
 ## Example Output
 
@@ -114,32 +77,6 @@ Revert pool size change or increase based on load testing
 - Claude Code CLI
 - Git repository (for code analysis)
 - Optional: Prometheus endpoint, GitHub/GitLab tokens
-
-## Help
-
-**Installation issues:**
-```bash
-# Verify plugin loaded
-/plugin
-
-# Check MCP servers
-/mcp
-```
-
-**Configuration issues:**
-- Check `.claude/thufir.local.md` has correct tokens
-- Verify endpoint URLs are accessible
-- Ensure tokens have required permissions
-
-**Agent not triggering:**
-- Use explicit commands: `/rca:analyze-prometheus`
-- Or clear trigger phrases: "investigate this production error"
-
-## Links
-
-- **Repository**: https://github.com/evangelosmeklis/thufir
-- **Issues**: https://github.com/evangelosmeklis/thufir/issues
-- **License**: MIT
 
 ---
 
